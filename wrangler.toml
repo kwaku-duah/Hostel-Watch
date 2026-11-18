@@ -1,0 +1,8 @@
+name = "hostelwatch"
+compatibility_date = "2025-01-01"
+pages_build_output_dir = "dist"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "hostelwatch"
+database_id = "4b27ddbf-c30c-4db3-943d-d620f08ea74c"

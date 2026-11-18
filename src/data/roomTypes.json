@@ -1,0 +1,8 @@
+[
+  {"id":"1","label":"1 in a room","occupants":1},
+  {"id":"2","label":"2 in a room","occupants":2},
+  {"id":"3","label":"3 in a room","occupants":3},
+  {"id":"4","label":"4 in a room","occupants":4},
+  {"id":"5-6","label":"5 to 6 in a room","occupants":6},
+  {"id":"7+","label":"7 or more in a room","occupants":8}
+]
