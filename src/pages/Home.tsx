@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link as RouterLink } from "react-router-dom";
-import { Alert, Box, Button, Card, CardActionArea, CardContent, Chip, Grid, Paper, Skeleton, Stack, TextField, Typography } from "@mui/material";
+import { Alert, Box, Button, Card, CardActionArea, CardContent, Chip, Grid, Link, Paper, Skeleton, Stack, TextField, Typography } from "@mui/material";
 import { getSummary } from "../api";
 import type { Summary } from "../types";
 import { UNIS, cedi } from "../utils";
@@ -9,6 +9,8 @@ export default function Home() {
   const [summary, setSummary] = useState<Summary | null>(null);
   const [error, setError] = useState("");
   const [q, setQ] = useState("");
+  const [showContact, setShowContact] = useState(false);
+  const email = ["duah229", "gmail.com"].join("@");
 
   useEffect(() => { getSummary().then(setSummary).catch((e: Error) => setError(e.message)); }, []);
 
@@ -79,6 +81,19 @@ export default function Home() {
             );
           })}
         </Grid>
+      </Box>
+
+      <Box sx={{ textAlign: "center", pb: 2 }}>
+        {showContact ? (
+          <Typography variant="body2" color="text.secondary">
+            Data requests and press:{" "}
+            <Link href={`mailto:${email}`}>{email}</Link>
+          </Typography>
+        ) : (
+          <Button size="small" color="inherit" onClick={() => setShowContact(true)} sx={{ opacity: 0.7 }}>
+            Contact for data
+          </Button>
+        )}
       </Box>
     </Stack>
   );
